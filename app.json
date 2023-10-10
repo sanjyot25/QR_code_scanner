@@ -2,9 +2,18 @@
   "expo": {
     "name": "AwesomeProject",
     "slug": "AwesomeProject",
+    "ios": {
+      "bundleIdentifier": "com.Gyrono.Scanner",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.Gyrono.Scanner",
+      "versionCode": 1
+    },
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
     ]
+    
   }
 }

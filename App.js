@@ -1,21 +1,39 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import {NavigationContainer, StackActions} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+
+import Login from './screens/login';
+import Scanner from './screens/scanner';
+import Register from './screens/RegisterDevice';
+import TaptoScan from './screens/TaptoScan';
+import FrontScan from './screens/FrontScan';
+import FrontDataScan from './screens/FrontdataPass';
+
+
+const stack = createStackNavigator();
+
+function App(){
+  return(
+    <stack.Navigator>
+      <stack.Screen name="Login" component={Login}/> 
+      <stack.Screen name="Scanner" component={Scanner}/> 
+      <stack.Screen name="Resister" component={Register}/> 
+      <stack.Screen name="TaptoScan" component={TaptoScan}/> 
+      <stack.Screen name="FrontScan" component={FrontScan}/> 
+      <stack.Screen name="Result" component={FrontDataScan}/> 
+      
+      
+    </stack.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default () =>{
+  return(
+    <NavigationContainer>
+      <App/>
+    </NavigationContainer>
+  )
+}
